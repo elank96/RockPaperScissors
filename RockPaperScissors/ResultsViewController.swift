@@ -11,22 +11,19 @@ import UIKit
 class ResultsViewController: UIViewController {
 
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var winnerImage: UIImageView!
+    
+    var resultTxt: String = ""
+    var imageName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        resultLabel.text = resultTxt
+        self.winnerImage.image = UIImage(named: imageName!)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    @IBAction func playAgain(_ sender: Any) {
+           dismiss(animated: true, completion: nil)
+       }
 
 }
